@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w style/ -o dist/css/ --recursive",
+    "compile": "node scripts/compile.js"
+  },
+  "author": "Frank Hulley-Jones",
+  "license": "UNLICENSED",
+  "repository": {},
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.6",
+    "grunt": "^1.0.4",
+    "handlebars": "^4.5.3",
+    "node-sass": "^4.13.0"
+  }
+}

@@ -1,0 +1,49 @@
+.logo {
+  margin: 0;
+  height: 56px;
+  padding-top: 0;
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  padding-left: 10px;
+
+  @include mq(mobileMedium) {
+    padding-left: 16px;
+  }
+
+  @include mq(tablet) {
+    height: 80px;
+    padding-left: 0px;
+  }
+
+  svg {
+    width: 79px;
+    height: 32px;
+  }
+
+  .logo__frame,
+  .logo__eyes {
+    fill: $brand-1;
+  }
+
+  &:hover {
+    // svg {
+    //   @include transition-duration(2s);
+    //   display: none;
+    //   transition: ease-out;
+    // }
+
+    // .logo-type {
+    //     display: block;
+    // }
+  }
+
+  .logo-type {
+    display: none;
+    font-family: $sans-serif;
+    font-size: $font-size-medium;
+    color: $brand-1;
+    text-decoration: none;
+    margin-top: -6px;
+  }
+}

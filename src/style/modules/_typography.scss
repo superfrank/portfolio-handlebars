@@ -1,0 +1,25 @@
+// Fonts
+$serif: "ff-tisa-web-pro", Georgia, serif;
+$sans-serif: "GT-Pressura-Regular", "Futura", sans-serif;
+
+// Type Sizes
+$font-size-extralarge: 8rem;
+$font-size-large: 6rem;
+$font-size-medium: 4rem;
+$font-size-small: 2rem;
+$font-size-body: 1.6rem;
+$font-size-meta: 1.2rem;
+
+// Line Height
+$line-height-body: 2.6rem;
+$line-height: 1.2;
+
+@font-face {
+  font-family: "GT-Pressura-Regular";
+  src: url("fonts/lineto-circular-pro-book.eot");
+  src: url("fonts/GT-Pressura-Regular.woff") format("woff"),
+    url("fonts/GT-Pressura-Regular.ttf") format("truetype"),
+    url("fonts/GT-Pressura-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

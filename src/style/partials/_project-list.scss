@@ -1,0 +1,123 @@
+.project-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 10px;
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 100px;
+  @include mq(mobileMedium) {
+    margin-top: 16px;
+  }
+  @include mq(mobileLandscape) {
+    padding: 0 20px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-column-gap: 20px;
+    width: 100%;
+
+    @include mq(mobileLandscape) {
+      grid-template-columns: 90px auto;
+    }
+
+    @include mq(tablet) {
+      max-width: 740px;
+    }
+    @include mq(wide) {
+      max-width: 860px;
+    }
+  }
+
+  &__col-2 {
+    grid-column: 2;
+  }
+
+  &__col-duo {
+    grid-column: 1 / span 2;
+    @include mq(mobileMedium) {
+      padding: 0 6px;
+    }
+    @include mq(mobileLandscape) {
+      grid-column: 2 / span 1;
+      padding: 0;
+    }
+  }
+  &__subheader {
+    margin-top: 56px;
+  }
+
+  &__number {
+    text-align: right;
+    line-height: 1.2;
+    color: $brand-1;
+  }
+
+  &__copy-container {
+    position: relative;
+  }
+
+  &__meta {
+    position: absolute;
+    display: block;
+    top: 2px;
+    left: -60px;
+
+    @include mq(mobileLandscape) {
+      left: -80px;
+    }
+    @include mq(tablet) {
+      top: 4px;
+    }
+  }
+
+  &__description {
+    max-width: 240px;
+    margin-bottom: 48px;
+    position: relative;
+    @include mq(tablet) {
+      max-width: 460px;
+    }
+    @include mq(wide) {
+      max-width: 560px;
+    }
+    a {
+      &:hover {
+        text-decoration: underline;
+    }
+    }
+  }
+
+  &__link {
+    // background-image: linear-gradient(0deg,$brand-1 100%,$brand-1 0%);
+    // background-repeat: repeat-x;
+    // background-position: 0 92%;
+    // background-color: transparent;
+    // background-size: 200% 3px;
+    // transition: opacity 5s ease-in-out;
+    line-height: 1.2;
+    transition: border 0.5s linear;
+    border-bottom: 2px solid $brand-1;
+    border-bottom-color: transparent;
+    &:hover {
+      border-bottom-color: $brand-1;
+      // background-image: linear-gradient(0deg,$brand-1 100%,$brand-1 0%);
+    }
+  }
+
+}
+
+.title-alt {
+  color: $black;
+}
+
+
+
+
+
+.project-list__item {
+  margin-bottom: 20px;
+}

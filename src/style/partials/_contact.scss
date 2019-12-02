@@ -1,0 +1,18 @@
+.contact-me {
+    display: block;
+    width: 100%;
+    background-color: $brand-1;
+    color: $white;
+    font-family: $sans-serif;
+    padding-top: 20px;
+    padding-bottom: 24px;
+    @include transition-duration(300ms);
+
+    .contact-heading {
+        font-size: $font-size-medium;
+        margin: 0px;
+    }
+    .email-link {
+        font-size: $font-size-large;
+    }
+}
