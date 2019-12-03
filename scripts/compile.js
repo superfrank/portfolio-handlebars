@@ -16,17 +16,22 @@ partials.forEach(function(partial) {
   const template = fs.readFileSync(partial, "utf8");
 
   handlebars.registerPartial(name, template);
-
-  // I tried this //
-
-  // const compiledTemplate = fs.outputFileSync(`build/${name}.html`, output);
-  // console.log(compiledTemplate);
-  // const output = initialTemplate(data);
 });
 
 const output = initialTemplate(data);
-console.log(output);
 
 // So this builds an index file, but then I wasn't sure how to loop over, internet etc.
-const compiledTemplate = fs.outputFileSync(`build/index.html`, output);
-console.log(compiledTemplate);
+// fs.outputFileSync(`build/index.html`, output);
+
+// Tried this
+// const compiledTemplate = fs.outputFileSync(`build/${partial()}.html`, output);
+// console.log(compiledTemplate);
+
+// && Tried this
+// let projectTemplates = glob.sync("src/templates/projects/*.*");
+
+// projectTemplates.forEach(function(project) {
+//   const name = project.replace("src/templates/projects/", "").split(".")[0];
+//   const template = fs.readFileSync(project, "utf8");
+// });
+// console.log(projectTemplates);
