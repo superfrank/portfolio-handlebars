@@ -1,11 +1,17 @@
 const fs = require("fs-extra");
 const handlebars = require("handlebars");
-var glob = require("glob");
+const glob = require("glob");
+const configPath = "build/";
 
 let data = fs.readFileSync("scripts/data.json", "utf8");
 data = JSON.parse(data); // converts the data variable from a string into a Javascript object. Do a console.log(typeof FILENAME) to see
-const source = fs.readFileSync("src/templates/index.html", "utf8");
-const initialTemplate = handlebars.compile(source);
+const sourceIndex = fs.readFileSync("src/templates/index.html", "utf8");
+const sourceProject = fs.readFileSync(
+  "src/templates/projects/internet.html",
+  "utf8"
+); // new
+const indexTemplate = handlebars.compile(sourceIndex);
+const projectTemplate = handlebars.compile(sourceProject); // new
 
 handlebars.registerHelper("inc", index => index++);
 
@@ -18,10 +24,12 @@ partials.forEach(function(partial) {
   handlebars.registerPartial(name, template);
 });
 
-const output = initialTemplate(data);
+const indexOutput = indexTemplate(data);
+const projectOutput = projectTemplate(data); // new
 
 // So this builds an index file, but then I wasn't sure how to loop over, internet etc.
-// fs.outputFileSync(`build/index.html`, output);
+fs.outputFileSync(`${configPath}index.html`, indexOutput);
+fs.outputFileSync(`${configPath}internet.html`, projectOutput); // new
 
 // Tried this
 // const compiledTemplate = fs.outputFileSync(`build/${partial()}.html`, output);
